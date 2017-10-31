@@ -164,3 +164,5 @@ To publish a new version to PyPI follow these steps:
 
        git tag 0.0.2
        git push --tags
+
+
