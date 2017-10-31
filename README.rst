@@ -8,41 +8,17 @@
 .. image:: https://coveralls.io/repos/viderum/ckanext-gosh/badge.svg
   :target: https://coveralls.io/r/viderum/ckanext-gosh
 
-.. image:: https://pypip.in/download/ckanext-gosh/badge.svg
-    :target: https://pypi.python.org/pypi//ckanext-gosh/
-    :alt: Downloads
-
-.. image:: https://pypip.in/version/ckanext-gosh/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-gosh/
-    :alt: Latest Version
-
-.. image:: https://pypip.in/py_versions/ckanext-gosh/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-gosh/
-    :alt: Supported Python versions
-
-.. image:: https://pypip.in/status/ckanext-gosh/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-gosh/
-    :alt: Development Status
-
-.. image:: https://pypip.in/license/ckanext-gosh/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-gosh/
-    :alt: License
-
 =============
 ckanext-gosh
 =============
 
-.. Put a description of your extension here:
-   What does it do? What features does it have?
-   Consider including some screenshots or embedding a video!
+This extension is used for custom modification to the ckan gosh portal
 
 
 ------------
 Requirements
 ------------
 
-For example, you might want to mention here which versions of CKAN this
-extension works with.
 
 
 ------------
@@ -80,7 +56,7 @@ Document any optional config settings here. For example::
 
     # The minimum number of hours to wait before re-checking a resource
     # (optional, default: 24).
-    ckanext.gosh.some_setting = some_default_value
+  
 
 
 ------------------------
