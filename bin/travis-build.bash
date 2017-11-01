@@ -8,7 +8,7 @@ sudo apt-get install postgresql-$PGVERSION solr-jetty
 echo "Installing CKAN and its Python dependencies..."
 git clone https://github.com/ckan/ckan
 cd ckan
-git checkout "ckan-2.7"
+git checkout "ckan-2.7.2"
 python setup.py develop
 pip install -r requirements.txt
 pip install -r dev-requirements.txt
