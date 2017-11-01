@@ -1,0 +1,11 @@
+{% ckan_extends %}
+
+{% block home_image %}
+<section class="featured media-overlay hidden-phone">
+  {% block home_image_content %}
+    <a class="media-image" href="#">
+      <img src="{{ h.url_for_static('/base/images/img-data-catalogue.png') }}" alt="Placeholder" width="420"/>
+    </a>
+  {% endblock %}
+</section>
+{% endblock %}

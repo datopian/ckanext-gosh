@@ -1,0 +1,71 @@
+{% ckan_extends %}
+
+{% block package_additional_info %}
+	{{super()}}
+
+  <tr>
+    <th scope="row" class="dataset-label">{{ _("Identifier") }}</th>
+    <td class="dataset-details">
+        {{pkg_dict.id}}
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="dataset-label">{{ _("Number of Participants") }}</th>
+    <td class="dataset-details">
+        {{pkg_dict.number_of_participants}}
+    </td>
+  </tr>
+
+   <tr>
+    <th scope="row" class="dataset-label">{{ _("Number of Records") }}</th>
+    <td class="dataset-details">
+        {{pkg_dict.number_of_records}}
+    </td>
+  </tr>
+
+   <tr>
+    <th scope="row" class="dataset-label">{{ _("Human Research") }}</th>
+    <td class="dataset-details">
+    {% if pkg_dict.human_research ==
+    '1' %}
+        {{_('Yes')}}
+    {% else %}
+        {{_('No')}}
+    {% endif %}
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="dataset-label">{{ _("Spatial Coverage") }}</th>
+    <td class="dataset-details">
+        {{pkg_dict.spatial_coverage}}
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="dataset-label">{{ _("Temporal Coverage") }}</th>
+    <td class="dataset-details">
+        {{pkg_dict.tc_start}} - {{pkg_dict.tc_end}}
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="dataset-label">{{ _("Language") }}</th>
+    <td class="dataset-details">
+    {% set language = h.get_language_by_code(pkg_dict.language) %}
+    {% if language %}
+        {{language.language}} ({{language.code}})
+    {% endif %}
+
+    </td>
+  </tr>
+
+  <tr>
+    <th scope="row" class="dataset-label">{{ _("Version") }}</th>
+    <td class="dataset-details">
+        {{h.get_package_version(pkg_dict.id)}}
+    </td>
+  </tr>
+
+{% endblock %}

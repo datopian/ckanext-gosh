@@ -1,0 +1,134 @@
+// Colors
+@white: #ffffff;
+@brand-light: #00A0D0;
+@brand: rgb(0,105,145);
+@brand-darker: darken(@brand, 10%);
+@brand-dark: darken(@brand-darker, 10%);
+
+// Base variables
+@imagePath: "../../../base/images";
+@spritePath: "@{imagePath}/sprite-ckan-icons.png";
+@bgPath: "";
+@FontAwesomePath: "../../../base/vendor/font-awesome/font";
+
+// Layout Variables
+@layoutLinkColor: @brand-light;
+@layoutFontFamily: @sansFontFamily;
+@layoutTextColor: #444;
+@layoutBoldColor: #000;
+@layoutBackgroundColor: rgb(220,220,220);
+@layoutTrimBackgroundColor: #fff;
+@layoutTrimBorderColor: #ccc;
+
+@textColor: @layoutTextColor;
+@linkColor: @layoutLinkColor;
+
+@navLinkColor: #333;
+@navActiveBackgroundColor: #f6f6f6;
+
+// Module Variables
+@moduleBackgroundColor: #fff;
+@moduleHeadingBorderColor: #ddd;
+@moduleHeadingBackgroundColor: #f6f6f6;
+@moduleHeadingActionTextColor: #888;
+@moduleExpandedBackgroundColor: rgba(255, 255, 255, 0.9);
+
+@tabTextColor: #111;
+@tagBackgroundColor: #f6f6f6;
+
+@gutterX: 25px;
+@gutterY: 20px;
+@gutterSmallX: 15px;
+@gutterSmallY: @gutterY;
+
+@emptyTextColor: #aaa;
+@genericBorderColor: #ddd;
+
+@breadcrumbTextColor: #505050;
+
+@mastheadTextColor: #fff;
+@mastheadLinkColor: @mastheadTextColor;
+@mastheadBackgroundColor: rgb(0,105,145);
+@mastheadBackgroundColorStart: #005d7a;
+@mastheadBackgroundColorEnd: #00536b;
+
+@navItemActiveTextColor: #FFF;
+@navItemActiveBackgroundColor: @brand-light;
+
+@pillTextColor: @navItemActiveTextColor;
+@pillBackgroundColor: darken(@navItemActiveBackgroundColor, 10%);
+
+@bannerTextColor: @mastheadTextColor;
+@bannerBackgroundColor: @mastheadBackgroundColor;
+
+
+@footerTextColor: #CCDEE3;
+@footerLinkColor: @footerTextColor;
+
+@inputColor: @black;
+@inputBackground: @white;
+@inputBorderRadius: @borderRadiusSmall;
+@disabledCustomInputTextColor: #aaa;
+@disabledCustomInputBackground: #f3f3f3;
+
+@highlightBackground: #fdf7e9;
+@highlightHoverBackground: #fdf3d9;
+
+// Forms
+
+@infoText: @brand-darker;
+@infoBackground: lighten(@brand-light, 50%);
+@infoBorder: @brand-darker;
+
+@formInfoText: #707070;
+
+@stagesTextColor: #aeaeae;
+@stagesBackground: #EDEDED;
+@stagesTransparentBackground: rgba(237, 237, 237, 0); // Used for arrows.
+@stagesActiveTextColor: #fff;
+@stagesActiveBackground: #8cc68a;
+@stagesActiveTransparentBackground: rgba(140, 198, 138, 0);
+@stagesCompleteTextColor: #eef6ed;
+@stagesCompleteBackground: #c5e2c4;
+@stagesCompleteTransparentBackground: rgba(197, 226, 196, 0);
+@stagesCounterTextColor: #fff;
+@stagesCounterBackground: #aeaeae;
+@stagesCounterActiveTextColor: #8cc68a;
+@stagesCounterActiveBackground: #fff;
+@stagesCounterCompleteTextColor: #c5e2c4;
+@stagesCounterCompleteBackground: #eef6ed;
+
+@codeTextColor: #000;
+
+
+// Datasets
+
+@listingHeadingTextColor: #333;
+@resourceFormatBackground: #aaa;
+
+// Table
+
+@chunkyTableHeaderTextColor: #fff;
+@chunkyTableHeaderBackgroundColor: #aaa;
+@chunkyTableStripeBackgroundColor: #f2f2f2;
+
+// Twitter Bootstrap Overrides
+@bodyBackground: @layoutBackgroundColor;
+@baseFontFamily: @layoutFontFamily;
+@iconSpritePath: "../images/bootstrap-glyphicons-halflings.png";
+@iconWhiteSpritePath: "../images/bootstrap-glyphicons-halflings-white.png";
+
+// Activity Stream base colors
+@activityColorText: #FFFFFF;
+@activityColorBlank: #999999;
+@activityColorNew: #69A67A;
+@activityColorNeutral: #767DCE;
+@activityColorModify: #767DCE;
+@activityColorDelete: #B95252;
+
+// Buttons
+@btnBorder: darken(@btnBackground, 10%);
+@btnBackground: @white;
+@btnBackgroundHighlight: darken(@white, 5%);
+@btnPrimaryBackground: @brand-light;
+@btnPrimaryBackgroundHighlight: @brand;

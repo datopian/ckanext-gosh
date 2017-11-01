@@ -1,0 +1,15 @@
+{% ckan_extends %}
+{{ super() }}
+{% block users_list %}
+  {% if c.userobj and c.userobj.sysadmin %}
+    <ul class="user-list">
+      {% block users_list_inner %}
+        {% for user  in c.page.items %}
+          <li>{{ h.linked_user(user['name'], maxlength=20) }}</li>
+        {% endfor %}
+      {% endblock %}
+    </ul>
+  {% else %}
+      <h1>{{ _('User not authorized to view registered users!')}}</h1>
+  {% endif %}
+{% endblock %}
