@@ -6,8 +6,7 @@ dist: trusty
 sudo: required
 cache: pip
 before_install:
- - chmod +x ./bin/travis-install-dependencies
- - chmod +x ./bin/travis-run-tests
-install: ./bin/travis-install-dependencies
+ - chmod +x ./bin/travis-build
+ - chmod +x ./bin/travis-run
 script:
  - ./bin/travis-run-tests
