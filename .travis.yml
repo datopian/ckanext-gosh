@@ -7,6 +7,7 @@ sudo: required
 cache: pip
 before_install:
  - chmod +x ./bin/travis-build.bash
+ - chmod +x ./bin/travis-run.sh
 install: ./bin/travis-build.bash
 script:
  - ./bin/travis-run.sh
