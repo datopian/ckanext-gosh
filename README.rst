@@ -2,11 +2,11 @@
    these badges work. The necessary Travis and Coverage config files have been
    generated for you.
 
-.. image:: https://travis-ci.org/viderum/ckanext-gosh.svg?branch=master
-    :target: https://travis-ci.org/viderum/ckanext-gosh
+.. image:: https://travis-ci.org/ViderumGlobal/ckanext-gosh.svg?branch=master
+    :target: https://travis-ci.org/ViderumGlobal/ckanext-gosh
 
-.. image:: https://coveralls.io/repos/viderum/ckanext-gosh/badge.svg
-  :target: https://coveralls.io/r/viderum/ckanext-gosh
+.. image:: https://coveralls.io/repos/ViderumGlobal/ckanext-gosh/badge.svg
+  :target: https://coveralls.io/r/ViderumGlobal/ckanext-gosh
 
 =============
 ckanext-gosh
