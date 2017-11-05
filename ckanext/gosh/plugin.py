@@ -58,12 +58,15 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     def create_package_schema(self):
         schema = super(GoshPlugin, self).create_package_schema()
+        not_empty = [toolkit.get_validator('not_empty'),
+                     toolkit.get_converter('convert_to_extras')]
         defaults = [toolkit.get_validator('ignore_missing'),
                     toolkit.get_converter('convert_to_extras')]
 
         schema.update({
             'restricted': defaults,
             'number_of_participants': defaults,
+            'url': not_empty,
             'human_research': defaults,
             'number_of_records': defaults,
             'spatial_coverage': defaults,
@@ -80,12 +83,15 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     def update_package_schema(self):
         schema = super(GoshPlugin, self).update_package_schema()
+        not_empty = [toolkit.get_validator('not_empty'),
+                     toolkit.get_converter('convert_to_extras')]
         defaults = [toolkit.get_validator('ignore_missing'),
                     toolkit.get_converter('convert_to_extras')]
 
         schema.update({
             'restricted': defaults,
             'number_of_participants': defaults,
+            'url': not_empty,
             'human_research': defaults,
             'number_of_records': defaults,
             'spatial_coverage': defaults,
@@ -103,12 +109,15 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     def show_package_schema(self):
 
         schema = super(GoshPlugin, self).show_package_schema()
+        not_empty = [toolkit.get_converter('convert_from_extras'),
+                     toolkit.get_validator('not_empty')]
         defaults = [toolkit.get_converter('convert_from_extras'),
                     toolkit.get_validator('ignore_missing')]
 
         schema.update({
             'restricted': defaults,
             'number_of_participants': defaults,
+            'url': not_empty,
             'human_research': defaults,
             'number_of_records': defaults,
             'spatial_coverage': defaults,
