@@ -56,36 +56,7 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     # IDatasetForm
 
-    def create_package_schema(self):
-        schema = super(GoshPlugin, self).create_package_schema()
-        not_empty = [toolkit.get_validator('not_empty'),
-                     toolkit.get_converter('convert_to_extras')]
-        defaults = [toolkit.get_validator('ignore_missing'),
-                    toolkit.get_converter('convert_to_extras')]
-
-        schema.update({
-            'restricted': defaults,
-            'number_of_participants': defaults,
-            'url': not_empty,
-            'notes': not_empty,
-            'maintainer': not_empty,
-            'author':not_empty,
-            'human_research': defaults,
-            'number_of_records': defaults,
-            'spatial_coverage': defaults,
-            'language': defaults,
-            'tc_start': defaults,
-            'tc_end': [
-                toolkit.get_validator('ignore_missing'),
-                toolkit.get_converter('convert_to_extras'),
-                tc_end_validator
-            ],
-            'logo': defaults
-        })
-        return schema
-
-    def update_package_schema(self):
-        schema = super(GoshPlugin, self).update_package_schema()
+    def _modify_package_schema(self, schema):
         not_empty = [toolkit.get_validator('not_empty'),
                      toolkit.get_converter('convert_to_extras')]
         defaults = [toolkit.get_validator('ignore_missing'),
@@ -110,6 +81,18 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
             ],
             'logo': defaults
         })
+        return schema
+
+    def create_package_schema(self):
+        schema = super(GoshPlugin, self).create_package_schema()
+        schema = self._modify_package_schema(schema)
+
+        return schema
+
+    def update_package_schema(self):
+        schema = super(GoshPlugin, self).update_package_schema()
+        schema = self._modify_package_schema(schema)
+
         return schema
 
     def show_package_schema(self):
