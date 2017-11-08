@@ -1,46 +1,48 @@
 <footer class="site-footer">
-  <div class="container">
-    {% block footer_content %}
-    <div class="row">
-      <div class="span4 footer-links">
-        {% block footer_nav %}
-        <ul class="unstyled">
-          {% block footer_links %}
-          <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
-          {% endblock %}
-        </ul>
-        <ul class="unstyled">
-          <li><a href="http://portal.umcn.nl/organisatie/im/Pages/Datastewardship.aspx" target="_blank">{{ _('RTC Data Stewardship') }}</a></li>
-        </ul>
-        <ul class="unstyled">
-          <li><a href="http://rsrch.nl" target="_blank">{{ _('RSRCH') }}</a></li>
-        </ul>
-        <ul class="unstyled">
-          {% block footer_links_ckan %}
+    <div class="container">
+        {% block footer_content %}
+        <div class="row">
+            <div class="span4 footer-links">
+                {% block footer_nav %}
+                <ul class="unstyled">
+                    {% block footer_links %}
+                    <li><a href="http://www.gosh.nhs.uk/research-andinnovation" target="_blank">{{ _('GOSH Research and Innovation') }}</a></li>
+                    {% endblock %}
+                </ul>
 
-          {% endblock %}
-        </ul>
-        {% endblock %}
-      </div>
-      <div class="span4">
-        <ul class="unstyled">
-          <li><a href="http://www.viderum.com/" target="_blank">{{ _('Viderum') }}</a></li>
-          {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
-          <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
-        </ul>
-      </div>
-      <div class="span4 attribution">
-        {% block footer_attribution %}
-        <p>{% trans %}Powered by <a href="http://ckan.org">CKAN</a>{% endtrans %}</p>        
-        {% endblock %}
-      </div>
-    </div>
-    {% endblock %}
-  </div>
+                <ul class="unstyled">
+                    {% block footer_links_ckan %} {% endblock %}
+                </ul>
+                {% endblock %}
+            </div>
+            <div class="span3">
+                <ul class="unstyled">
+                    <li><a href="http://www.aridhia.com/" target="_blank">{{ _('Aridhia') }}</a></li>
+                    <li><a href="http://www.aridhia.com/platform/analytixagility/" target="_blank">{{ _('AnalytiXagility') }}</a></li>
 
-  {% block footer_debug %}
-  {% if g.debug %}
-  {% include 'snippets/debug.html' %}
-  {% endif %}
-  {% endblock %}
+                </ul>
+            </div>
+            <div class="span3">
+                <ul class="unstyled">
+                    <li><a href="http://www.viderum.com/" target="_blank">{{ _('Viderum') }}</a></li>
+                    {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
+                    <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
+                </ul>
+            </div>
+            <div class="span2 attribution">
+                {% block footer_attribution %}
+                <div class="span2">
+                    <ul class="unstyled">
+                        <li>
+                            <a href="http://www.aridhia.com/" target="_blank"><img src="/base/images/aridhia-logo.png" alt=""></li>
+                        </a>
+                    </ul>
+
+                    {% endblock %}
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+
+        {% block footer_debug %} {% if g.debug %} {% include 'snippets/debug.html' %} {% endif %} {% endblock %}
 </footer>

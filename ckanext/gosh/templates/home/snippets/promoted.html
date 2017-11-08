@@ -1,11 +1,9 @@
-{% ckan_extends %}
-
-{% block home_image %}
+{% ckan_extends %} {% block home_image %}
 <section class="featured media-overlay hidden-phone">
-  {% block home_image_content %}
-    <a class="media-image" href="#">
-      <img src="{{ h.url_for_static('/base/images/img-data-catalogue.png') }}" alt="Placeholder" width="420"/>
+    {% block home_image_content %}
+    <a class="media-image" href="http://www.gosh.nhs.uk/">
+        <img src="{{ h.url_for_static('/base/images/img-data-catalogue.png') }}" alt="Placeholder" width="420" />
     </a>
-  {% endblock %}
+    {% endblock %}
 </section>
 {% endblock %}
