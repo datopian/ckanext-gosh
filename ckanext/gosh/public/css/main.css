@@ -67,6 +67,7 @@ body {
 
 .masthead .site-search {
     margin-top: 12px;
+    float: right;
 }
 
 .masthead .navigation {
@@ -147,4 +148,10 @@ body {
 
 .site-footer a {
     color: #fff;
+}
+
+.search-form .search-input.search-giant button {
+    margin-top: -13px;
+    right: 15px;
+    height: 30px;
 }
