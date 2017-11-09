@@ -1,3 +1,4 @@
+{% ckan_extends %}
 <footer class="site-footer">
     <div class="container">
         {% block footer_content %}
@@ -34,15 +35,16 @@
                 <div class="span2">
                     <ul class="unstyled">
                         <li>
-                            <a href="http://www.aridhia.com/" target="_blank"><img src="/images/aridhia-logo.png" alt=""></li>
+                            <a href="http://www.aridhia.com/" target="_blank"><img src="{{ h.url_for_static('/base/images/aridhia-logo.png') }}" alt=""></li>
                         </a>
                     </ul>
-
-                    {% endblock %}
                 </div>
+                {% endblock %}
             </div>
             {% endblock %}
         </div>
 
-        {% block footer_debug %} {% if g.debug %} {% include 'snippets/debug.html' %} {% endif %} {% endblock %}
+        {% block footer_debug %} 
+        {{ super() }}
+        {% endblock %}
 </footer>

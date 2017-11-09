@@ -1,29 +1,47 @@
-{% ckan_extends %} {% block header_wrapper %} {% block header_account %} {{ super() }} {% endblock %}
+{% ckan_extends %} 
+
+{% block header_wrapper %} 
+{% block header_account %} 
+{{ super() }} 
+{% endblock %}
 
 <header class="navbar-logo masthead">
     <div class="container">
         <div class="flex">
             {# The .header-image class hides the main text and uses image replacement for the title #}
             <hgroup class="{{ g.header_class }}">
-                {% block header_logo %} {{ super() }} {% endblock %}
+                {% block header_logo %}
+                {{ super() }}
+                {% endblock %}
             </hgroup>
             <ul class="unstyled pull-right language-switcher">
                 {% set current_url = request.environ.CKAN_CURRENT_URL %} {% set current_lang = request.environ.CKAN_LANG %}
-                <li {% if current_lang=='en' %}class="active" {% endif %}><a href="{% url_for current_url, locale='en' %}">EN</a></li>
-                <li {% if current_lang=='nl' %}class="active" {% endif %}><a href="{% url_for current_url, locale='nl' %}">NL</a></li>
+                <li {% if current_lang=='en' %}class="active" {% endif %}>
+                    <a href="{% url_for current_url, locale='en' %}">EN</a>
+                </li>
+                <li {% if current_lang=='nl' %}class="active" {% endif %}>
+                    <a href="{% url_for current_url, locale='nl' %}">NL</a>
+                </li>
             </ul>
         </div>
     </div>
 </header>
 <header class="navbar navbar-static-top masthead">
-    {% block header_debug %} {{ super() }} {% endblock %}
+    {% block header_debug %}
+    {{ super() }}
+    {% endblock %}
 
     <div class="container">
         <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
-      <span class="fa fa-bars"></span>
-    </button>
+            <span class="fa fa-bars"></span>
+        </button>
         <div class="nav-collapse collapse">
-            {% block header_site_navigation %} {{ super() }} {% endblock %} {% block header_site_search %} {{ super() }} {% endblock %}
+            {% block header_site_navigation %}
+            {{ super() }} 
+            {% endblock %} 
+            {% block header_site_search %}
+            {{ super() }} 
+            {% endblock %}
         </div>
     </div>
 </header>
