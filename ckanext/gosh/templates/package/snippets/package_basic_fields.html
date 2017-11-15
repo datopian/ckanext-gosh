@@ -42,13 +42,8 @@
         <p>{{_('A short and clear description of the dataset. This will help in making the dataset findable.')}}</p>
       </div>
     </div>
-    <label class="control-label" for="field-notes"><span title="This field is required" class="control-required">*</span> Description</label>
-    <div class="controls editor">
+   {{ form.markdown('notes', id='field-notes', label=_('Description'), placeholder=_(''), value=data.notes, error=errors.notes, is_required=true) }}
 
-      <textarea id="field-notes" name="notes" cols="20" rows="5" placeholder="some useful notes about this particular data file which is part of the dataset." required>{{data.notes}}</textarea>
-      <span class="editor-info-block">You can use <a href="#markdown" title="" data-target="popover" data-content="<pre><p>__Bold text__ or _italic text_</p><p># title<br>## secondary title<br>### etc</p><p>* list<br>* of<br>* items</p><p>http://auto.link.ed/</p></pre><p><b><a href='http://daringfireball.net/projects/markdown/syntax' target='_blank'>Full markdown syntax</a></b></p><p class='muted'><b>Please note:</b> HTML tags are stripped out for security reasons</p>" data-html="true" data-original-title="Markdown quick reference">Markdown formatting</a> here</span>
-
-    </div>
   </div>
   {% endblock %}
 

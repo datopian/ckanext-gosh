@@ -42,11 +42,8 @@
       <p>{{_('If you want, you can add the source URL of the dataset or a URL providing more information about the dataset, such as a departmental website.')}}</p>
     </div>
   </div>
-      <label class="control-label" for="url"><span title="This field is required" class="control-required">*</span> {{_('URL')}}</label>
-  <div class="controls">
-    <input id="url" name="url" type="url" placeholder="http://" value="{{data.url}}">
-    <p class="help-block">{{_('The source URL of the dataset or a URL providing more information about the dataset, such as a departmental website.')}}</p>
-  </div>
+    {{ form.input('url', id='field-url', label=_('URL'), placeholder=_(''), value=data.url, error=errors.url ,classes=['control-medium'], is_required=true) }}
+    <p class="help-block help-right">{{_('The source URL of the dataset or a URL providing more information about the dataset, such as a departmental website.')}}</p>
 </div>
 
 {% endblock %}
@@ -66,11 +63,9 @@
         <p>{{_('The name of the person who created this dataset, usually first author. Or in case of living datasets, the manager of the dataset. This may not be the contact person for re-use of this dataset, see publisher. However, creator and publisher could be the same person.')}}</p>
       </div>
     </div>
-    <label class="control-label" for="field-author"><span title="This field is required" class="control-required">*</span> {{_('Creator')}}</label>
-    <div class="controls ">
-      <input id="field-author" type="text" name="author" value="{{data.author}}" placeholder="Joe Bloggs" required>
-      <p class="help-block">{{_('The name of the person who created this dataset.')}}</p>
-    </div>
+    {{ form.input('author', id='field-author', label=_('Creator'), placeholder=_('Joe Bloggs'), value=data.author, error=errors.author ,classes=['control-medium'], is_required=true) }}
+     <p class="help-block help-right">{{_('The name of the person who created this dataset.')}}</p>
+
   </div>
 
   <div class="control-group control-medium">
@@ -104,11 +99,8 @@
         <p>{{_('The name of the person publishing the dataset, this is the contact person for approval of re-use of this dataset. This could be the same person as the creator.')}}</p>
       </div>
     </div>
-    <label class="control-label" for="field-maintainer"><span title="This field is required" class="control-required">*</span> {{_('Publisher')}}</label>
-    <div class="controls ">
-      <input id="field-maintainer" type="text" name="maintainer" value="{{data.maintainer}}" placeholder="Joe Bloggs" required>
-      <p class="help-block">{{_('The primary point of contact for the dataset and access to it.')}}</p>
-    </div>
+    {{ form.input('maintainer', id='field-maintainer', label=_('Publisher'), placeholder=_('Joe Bloggs'), value=data.maintainer, error=errors.maintainer ,classes=['control-medium'], is_required=true) }}
+    <p class="help-block help-right">{{_('The primary point of contact for the dataset and access to it.')}}</p>
   </div>
 
   <div class="control-group control-medium">
