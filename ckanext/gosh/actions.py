@@ -7,7 +7,6 @@ import json
 import sqlalchemy
 from paste.deploy.converters import asbool
 
-import ckan.lib.dictization
 import ckan.logic as logic
 import ckan.logic.action
 import ckan.logic.schema
@@ -17,7 +16,6 @@ import ckan.model as model
 import ckan.model.misc as misc
 import ckan.plugins as plugins
 import ckan.lib.search as search
-import ckan.lib.plugins as lib_plugins
 import ckan.authz as authz
 
 from ckan.common import _

@@ -2,6 +2,7 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import ckanext.gosh.helpers as _helpers
 import logging
+from email_validator import validate_email
 
 log = logging.getLogger(__name__)
 
@@ -21,6 +22,21 @@ def tc_end_validator(key, flattened_data, errors, context):
     return flattened_data
 
 
+def email_validator(key, data, errors, context):
+    email = data[key]
+    name = ''
+    if 'maintainer_email' in key:
+        name = 'publisher'
+    elif 'author_email' in key:
+        name = 'creator'
+
+    if email != '':
+        try:
+            validate_email(email)
+        except Exception:
+            raise toolkit.Invalid('Please provide a valid email address for ' + name)
+
+
 class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IPackageController, inherit=True)
@@ -29,6 +45,13 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IRoutes)
     plugins.implements(plugins.IActions)
+
+    # IConfigurer
+
+    def update_config(self, config_):
+        toolkit.add_template_directory(config_, 'templates')
+        toolkit.add_public_directory(config_, 'public')
+        toolkit.add_resource('fanstatic', 'gosh')
 
     # IPackageController
 
@@ -57,17 +80,25 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     # IDatasetForm
 
     def _modify_package_schema(self, schema):
+
         not_empty = [toolkit.get_validator('not_empty'),
                      toolkit.get_converter('convert_to_extras')]
         defaults = [toolkit.get_validator('ignore_missing'),
                     toolkit.get_converter('convert_to_extras')]
-
+        validate_url = [toolkit.get_validator('url_validator'),
+                        toolkit.get_validator('not_empty'),
+                        toolkit.get_converter('convert_to_extras')]
+        valid_mail = [toolkit.get_validator('ignore_missing'),
+                      email_validator,
+                      toolkit.get_converter('convert_to_extras')]
         schema.update({
             'restricted': defaults,
             'number_of_participants': defaults,
-            'url': not_empty,
+            'url': validate_url,
+            'author_email': valid_mail,
             'notes': not_empty,
             'maintainer': not_empty,
+            'maintainer_email': valid_mail,
             'author': not_empty,
             'human_research': defaults,
             'number_of_records': defaults,
@@ -107,7 +138,9 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
             'restricted': defaults,
             'number_of_participants': defaults,
             'maintainer': not_empty,
+            'maintainer_email': defaults,
             'author': not_empty,
+            'author_email': defaults,
             'url': not_empty,
             'notes': not_empty,
             'human_research': defaults,
@@ -130,13 +163,6 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         # This plugin doesn't handle any special package types, it just
         # registers itself as the default (above).
         return []
-
-    # IConfigurer
-
-    def update_config(self, config_):
-        toolkit.add_template_directory(config_, 'templates')
-        toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic', 'gosh')
 
     def get_helpers(self):
         return {
@@ -168,8 +194,8 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     def get_actions(self):
         from ckanext.gosh.actions import (package_autocomplete,
-                                             package_search, resource_search,
-                                             user_list)
+                                          package_search, resource_search,
+                                          user_list)
         # We're overloading few actions to get the benefits of private and
         # restricted browsing and searching
         return {
