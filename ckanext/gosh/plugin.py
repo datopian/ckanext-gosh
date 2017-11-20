@@ -87,7 +87,7 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         defaults = [toolkit.get_validator('ignore_missing'),
                     toolkit.get_converter('convert_to_extras')]
         validate_url = [toolkit.get_validator('url_validator'),
-                        toolkit.get_validator('not_empty'),
+                        toolkit.get_validator('ignore_missing'),
                         toolkit.get_converter('convert_to_extras')]
         valid_mail = [toolkit.get_validator('ignore_missing'),
                       email_validator,
