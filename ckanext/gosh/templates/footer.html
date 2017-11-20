@@ -7,7 +7,9 @@
                 {% block footer_nav %}
                 <ul class="unstyled">
                     {% block footer_links %}
-                    <li><a href="http://www.gosh.nhs.uk/research-andinnovation" target="_blank">{{ _('GOSH Research and Innovation') }}</a></li>
+                    <li>
+                        <a href="http://www.gosh.nhs.uk/research-and-innovation" target="_blank">{{ _('GOSH Research and Innovation') }}</a>
+                    </li>
                     {% endblock %}
                 </ul>
 
@@ -18,16 +20,24 @@
             </div>
             <div class="span3">
                 <ul class="unstyled">
-                    <li><a href="http://www.aridhia.com/" target="_blank">{{ _('Aridhia') }}</a></li>
-                    <li><a href="http://www.aridhia.com/platform/analytixagility/" target="_blank">{{ _('AnalytiXagility') }}</a></li>
+                    <li>
+                        <a href="http://www.aridhia.com/" target="_blank">{{ _('Aridhia') }}</a>
+                    </li>
+                    <li>
+                        <a href="http://www.aridhia.com/platform/analytixagility/" target="_blank">{{ _('AnalytiXagility') }}</a>
+                    </li>
 
                 </ul>
             </div>
             <div class="span3">
                 <ul class="unstyled">
-                    <li><a href="http://www.viderum.com/" target="_blank">{{ _('Viderum') }}</a></li>
+                    <li>
+                        <a href="http://www.viderum.com/" target="_blank">{{ _('Viderum') }}</a>
+                    </li>
                     {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
-                    <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
+                    <li>
+                        <a href="{{ api_url }}" target="_blank">{{ _('CKAN API') }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="span2 attribution">
@@ -35,7 +45,9 @@
                 <div class="span2">
                     <ul class="unstyled">
                         <li>
-                            <a href="http://www.aridhia.com/" target="_blank"><img src="{{ h.url_for_static('/base/images/aridhia-logo.png') }}" alt=""></li>
+                            <a href="http://www.aridhia.com/" target="_blank">
+                                <img src="{{ h.url_for_static('/base/images/aridhia-logo.png') }}" alt="">
+                        </li>
                         </a>
                     </ul>
                 </div>
@@ -44,7 +56,5 @@
             {% endblock %}
         </div>
 
-        {% block footer_debug %} 
-        {{ super() }}
-        {% endblock %}
+        {% block footer_debug %} {{ super() }} {% endblock %}
 </footer>
