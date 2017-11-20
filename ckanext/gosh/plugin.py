@@ -68,13 +68,11 @@ class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     # IRoutes
 
     def before_map(self, map):
-        '''
 
         map.redirect('/user/register', 'https://portal.rsrch.nl/',
                      _redirect_code='301 Moved Permanently')
         map.redirect('/user/reset', 'https://portal.rsrch.nl/',
                      _redirect_code='301 Moved Permanently')
-        '''
         return map
 
     def after_map(self, map):
