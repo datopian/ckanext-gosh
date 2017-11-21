@@ -36,7 +36,7 @@
         <p>{{_('A short and clear description of the dataset. This will help in making the dataset findable.')}}</p>
       </div>
     </div>
-    {{ form.markdown('notes', id='field-notes', label=_('Description'), placeholder=_(''), value=data.notes, error=errors.notes,
+    {{ form.markdown('notes', id='field-notes', label=_('Description'), value=data.notes, error=errors.notes,
     is_required=true) }}
 
   </div>
@@ -121,8 +121,8 @@
       <div class="control-group-info">
         <a class="control-group-info-toggle"></a>
         <div class="control-group-info-content control-group-info-content-hidden">
-          <p>{{_('Public datasets are visible to all visitors (members and non-members) of the GOSH Dataset Catalogue. Select
-            ‘GOSH-restricted if the public dataset visibility should be limited to GOSH users only. Private datasets can
+          <p>{{_('Public datasets are visible to all visitors (members and non-members) of the GOSH Data Catalogue. Select
+            `GOSH-restricted` if the public dataset visibility should be limited to GOSH users only. Private datasets can
             only be seen by Organisation members.')}}</p>
         </div>
       </div>
