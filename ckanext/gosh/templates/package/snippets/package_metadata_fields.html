@@ -42,7 +42,7 @@
       <p>{{_('If you want, you can add the source URL of the dataset or a URL providing more information about the dataset, such as a departmental website.')}}</p>
     </div>
   </div>
-    {{ form.input('url', id='field-url', label=_('URL'), placeholder=_(''), value=data.url, error=errors.url ,classes=['control-medium'])}}
+    {{ form.input('url', id='field-url', label=_('URL'), value=data.url, error=errors.url ,classes=['control-medium'])}}
     <p class="help-block help-right">{{_('The source URL of the dataset or a URL providing more information about the dataset, such as a departmental website.')}}</p>
 </div>
 

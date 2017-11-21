@@ -36,7 +36,7 @@
         <p>{{_('A short and clear description of the dataset. This will help in making the dataset findable.')}}</p>
       </div>
     </div>
-    {{ form.markdown('notes', id='field-notes', label=_('Description'), placeholder=_(''), value=data.notes, error=errors.notes,
+    {{ form.markdown('notes', id='field-notes', label=_('Description'), value=data.notes, error=errors.notes,
     is_required=true) }}
 
   </div>
