@@ -3,6 +3,7 @@ import ckan.plugins.toolkit as toolkit
 import ckanext.gosh.helpers as _helpers
 import logging
 from email_validator import validate_email
+from ckan.lib.plugins import DefaultTranslation
 
 log = logging.getLogger(__name__)
 
@@ -37,13 +38,14 @@ def email_validator(key, data, errors, context):
             raise toolkit.Invalid('Please provide a valid email address for ' + name)
 
 
-class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
+class GoshPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.IResourceController, inherit=True)
     plugins.implements(plugins.IDatasetForm, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IRoutes)
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IActions)
 
     # IConfigurer
