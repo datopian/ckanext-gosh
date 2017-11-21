@@ -1,15 +1,15 @@
-# English translations for ckanext-gosh.
+# English translations for PROJECT.
 # Copyright (C) 2017 ORGANIZATION
-# This file is distributed under the same license as the ckanext-gosh
-# project.
+# This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ckanext-gosh 0.0.1\n"
+"Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-11-20 22:48+0100\n"
-"PO-Revision-Date: 2017-11-20 22:49+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
@@ -19,5 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.5.1\n"
 
-msgid "Organizations"
+#: ckanext/gosh/templates/package/snippets/package_basic_fields.html:106
+#, fuzzy
+#| msgid "Organizations"
+msgid "Organization"
 msgstr "Organisations"
+
+#: ckanext/gosh/templates/package/snippets/package_basic_fields.html:110
+#, fuzzy
+#| msgid "Organizations"
+msgid "No organization"
+msgstr "No organisations"
+
