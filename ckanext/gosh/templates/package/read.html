@@ -1,0 +1,13 @@
+{% ckan_extends %}
+{% block secondary_help_content %}
+	{% if c.userobj %}
+	<div class="module-content">
+	<h1 class="heading">DRE</h1>
+		<p>{{_('Use this dataset in a DRE workspace')}}</p>
+	<a href="https://radboud.rsrch.nl/aperture/dataset-access/{{pkg.id}}" class="btn btn-success" target="_blank">
+	  <i class="icon-plus-sign"></i>
+	  {{_('Select')}}
+	</a>
+	</div>
+	{% endif %}
+{% endblock %}
